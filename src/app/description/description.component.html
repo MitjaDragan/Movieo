@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row pt-5">
+        <div class="col-sm-10">
+            <h1>{{movieData["Title"]}}</h1>
+            <p>Original title: {{movieData["Title"]}}</p>
+            <p>{{movieData["Type"]}} * {{movieData["Released"]}} * {{movieData["Runtime"]}}</p>
+        </div>
+        <div class="col-sm-2">
+            <div class="ImdbRating">
+                <span id="starRating">&#9733;</span>
+                <span id="Rating"><b>{{movieData["imdbRating"]}}</b>/10</span>
+                <br/><span class="ml-4">{{movieData["imdbVotes"]}}</span>
+            </div>
+            <button (click)="addMovieToFavourites()" class="btn btn-info mt-2">Add to favourites</button>
+        </div>
+    </div>
+    <div class="row">
+        <img [src]="movieData['Poster']"/>
+    </div>
+    <div class="row mt-2">
+        <span class="badge badge-dark ml-2" *ngFor="let genre of genres">
+            {{ genre }}
+        </span>
+    </div>
+    <div class="row mt-5">
+        <p>{{movieData["Plot"]}}</p>
+    </div>
+</div>

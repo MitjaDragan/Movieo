@@ -1,0 +1,49 @@
+.imageText {
+    height: 150px;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 51%, rgba(164,164,164,0) 100%);
+    position: relative;
+    margin-top:-80px;
+
+}
+
+#homeCarouselImage {
+    width:100%;
+}
+
+.card {
+    background: #191919 ;
+}
+
+#boot-icon {
+    font-size: 350%; 
+    color: rgb(255, 255, 255);
+}
+#boot-icon-small {
+    font-size: 200%; 
+    color: rgb(255, 255, 255);
+    position:relative;
+    margin-left:7%;
+}
+
+#boot-title {
+    color: white;
+    font-size:200%;
+}
+
+#boot-title-small {
+    color: white;
+    font-size:130%;
+}
+
+.trailer {
+    position:relative;
+    margin-left:65%;
+    padding-top:7%;
+}
+
+.homeListImage {
+    max-width:25%;
+    margin-top:2%;
+}
+

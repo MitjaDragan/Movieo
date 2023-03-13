@@ -1,0 +1,21 @@
+nav {
+    justify-content: center;
+}
+
+#movie {
+    width:700px;
+}
+
+#logo {
+    height:38px;
+    width:auto;
+}
+
+#logo:hover {
+    cursor: pointer;
+}
+
+#starRating {
+    font-size:150%;
+    color:#f5c518;
+}
