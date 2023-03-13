@@ -19,12 +19,23 @@
     font-size: 350%; 
     color: rgb(255, 255, 255);
 }
+
+#boot-icon:hover {
+    color: #f5c518;
+    cursor: pointer;
+}
+
 #boot-icon-small {
     font-size: 200%; 
     color: rgb(255, 255, 255);
     position:relative;
     margin-left:7%;
     margin-top:5%;
+}
+
+#boot-icon-small:hover {
+    color: #f5c518;
+    cursor: pointer;
 }
 
 #boot-title {
@@ -38,6 +49,7 @@
     position:relative;
     margin-top:8%;
     margin-left:2%;
+    width:100%;
 }
 
 .trailer {
@@ -50,5 +62,14 @@
     max-width:25%;
     margin-top:2%;
     position:relative;
+}
+
+.homeListDescription {
+    color:white;
+    position:relative;
+    margin-top:18%;
+    margin-left:-110%;
+    font-size:90%;
+    width:60%;
 }
 
