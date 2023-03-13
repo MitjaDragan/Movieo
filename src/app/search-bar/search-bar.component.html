@@ -1,39 +1,39 @@
 <nav class="navbar navbar-dark bg-dark">
-    <img id="logo" routerLink="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png" alt="logo"/>
-    <form
-            class="form-inline"
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img class="d-inline-block" id="logo" routerLink="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png" alt="logo"/>
+          </a>
+        <form
+            class="d-flex"
             [formGroup]="movieSearchForm"
             (ngSubmit)="setData(movieSearchForm.value)"
-        >
-            <div class="form-group">
-
-                <select
-                    class="custom-select"
-                    id="type"
-                    aria-describedby="type"
-                    formControlName="type"
+            >
+            <select
+                class="form-control select-category mt-2"
+                id="type"
+                aria-describedby="type"
+                formControlName="type"
                 >   
-                    <option value="">All</option>
-                    <option value="movie">Movie</option>
-                    <option value="series">Series</option>
-                </select>
+                <option value="">All</option>
+                <option value="movie">Movie</option>
+                <option value="series">Series</option>
+            </select>
 
-                <input
-                    class="form-control"
-                    type="text"
-                    id="movie"
-                    aria-describedby="movie"
-                    placeholder="Search"
-                    formControlName="movie"
-                />
+            <input
+                class="form-control mr-sm-2 mt-2"
+                type="search"
+                id="movie"
+                aria-describedby="movie"
+                placeholder="Search"
+                formControlName="movie"
+            />
+            <button type="submit" class="btn btn-outline-light my-2 my-sm-2" routerLink="/title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
 
-                <button type="submit" class="btn btn-light btn-md" routerLink="/title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </button>
-
-                <button class="btn btn-dark" routerLink="/favourites">
-                    <span id="starRating">&#9733;</span>
-                </button>
-            </div>
+            <button class="btn btn-outline-dark" routerLink="/favourites">
+                <span id="starRating">&#9733;</span>
+            </button>
         </form>
-    </nav>
+    </div>
+</nav>

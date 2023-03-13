@@ -1,11 +1,12 @@
-nav {
+.container-fluid {
     justify-content: center;
 }
-
-#movie {
-    width:700px;
+form {
+    width:50%;
 }
-
+#movie {
+    width:400%;
+}
 #logo {
     height:38px;
     width:auto;
@@ -19,3 +20,26 @@ nav {
     font-size:150%;
     color:#f5c518;
 }
+
+@media (max-width: 575.98px) {
+    .container-fluid {
+        justify-content:flex-start;
+    }
+
+    form {
+        width:71%;
+    }
+
+    #movie {
+        width:200%;
+    }
+
+    #type {
+      display:none;
+    }
+
+    .btn {
+        margin-left:10px;
+      }
+  }
+  

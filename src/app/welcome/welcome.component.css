@@ -11,8 +11,8 @@
     width:100%;
 }
 
-.card {
-    background: #191919 ;
+.row, .card {
+    background: #191919;
 }
 
 #boot-icon {
@@ -71,5 +71,20 @@
     margin-left:-110%;
     font-size:90%;
     width:60%;
+}
+
+.featuredList {
+    border:2px solid green;
+    height:200px;
+}
+
+.winnerList {
+    border:2px solid blue;
+    height:150px;
+}
+
+.whatToWatch {
+    border:2px solid yellow;
+    height:300px;
 }
 
