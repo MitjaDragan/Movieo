@@ -6,12 +6,12 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-  //{ path: '', redirectTo: 'welcome', pathMatch: 'full'},
-  { path: '', component: WelcomeComponent},
+  { path: '', redirectTo: 'welcome', pathMatch: 'full'},
+  //{ path: '', component: WelcomeComponent},
   { path: 'title', component: DescriptionComponent},
   { path: 'result', component: SearchResultsComponent},
-  { path: 'favourites', component: FavouritesComponent}
-  //{ path: 'welcome', component: WelcomeComponent }
+  { path: 'favourites', component: FavouritesComponent},
+  { path: 'welcome', component: WelcomeComponent }
 ];
 
 @NgModule({
