@@ -24,6 +24,7 @@
     color: rgb(255, 255, 255);
     position:relative;
     margin-left:7%;
+    margin-top:5%;
 }
 
 #boot-title {
@@ -34,6 +35,9 @@
 #boot-title-small {
     color: white;
     font-size:130%;
+    position:relative;
+    margin-top:8%;
+    margin-left:2%;
 }
 
 .trailer {
@@ -45,5 +49,6 @@
 .homeListImage {
     max-width:25%;
     margin-top:2%;
+    position:relative;
 }
 
