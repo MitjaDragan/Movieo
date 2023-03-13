@@ -1,9 +1,9 @@
 .imageText {
-    height: 150px;
+    height: 10%;
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 51%, rgba(164,164,164,0) 100%);
     position: relative;
-    margin-top:-80px;
+    margin-top:-10%;
 
 }
 
