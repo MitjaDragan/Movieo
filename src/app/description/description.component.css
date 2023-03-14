@@ -9,3 +9,21 @@
 span, h1, p {
     color:white;
 }
+
+iframe {
+    width:100%;
+    height:100%;    
+}
+
+.movieTrailer {
+    pointer-events: none;
+}
+
+.movieTrailer:hover {
+    cursor: pointer;
+}
+
+.movieLink {
+    position: absolute;
+    z-index: 1;
+}

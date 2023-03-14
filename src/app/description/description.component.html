@@ -15,7 +15,14 @@
         </div>
     </div>
     <div class="row">
-        <img [src]="movieData['Poster']"/>
+        <div class="col-3">
+            <img [src]="movieData['Poster']"/>
+        </div>
+        <div class="movieTrailer col-7">
+            <a class="movieLink" href="/welcome">
+                <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1" frameborder="0"></iframe>
+            </a>
+        </div>
     </div>
     <div class="row mt-2">
         <span class="badge badge-dark ml-2" *ngFor="let genre of genres">
