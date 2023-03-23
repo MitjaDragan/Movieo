@@ -28,4 +28,14 @@ export class FavouritesComponent{
     this.favouriteMovies = JSON.parse(localStorage.getItem('favourites') || '[]');
   }
 
+  unfavourite(title:any) {
+    this.favouriteMovies = JSON.parse(localStorage.getItem('favourites') || '[]');
+    this.favouriteMovies = this.favouriteMovies.filter(movie => movie.Title !== title);
+    localStorage.setItem('favourites', JSON.stringify(this.favouriteMovies));
+  }
+
+  clearFavourites() {
+    localStorage.clear();
+    location.reload();
+  }
 }

@@ -40,7 +40,7 @@ export class DescriptionComponent{
   addMovieToFavourites() {
     const favourites = JSON.parse(localStorage.getItem('favourites') || '[]');
     favourites.push(this.movieData);
-    console.log(favourites);
+    localStorage.clear();
     localStorage.setItem('favourites', JSON.stringify(favourites));
   }
 

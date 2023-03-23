@@ -10,6 +10,7 @@ export class AppComponent implements OnInit{
   title = 'Movieo';
   
   ngOnInit() {
-    localStorage.clear();
+    //window.alert("Reloaded");
+    //localStorage.clear();
   }
 }

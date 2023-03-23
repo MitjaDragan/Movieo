@@ -24,6 +24,5 @@ iframe {
 }
 
 .movieLink {
-    position: absolute;
     z-index: 1;
 }
