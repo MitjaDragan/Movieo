@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApixuService } from "../apixu.service";
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.css']
 })
-export class SearchResultsComponent {
+export class SearchResultsComponent implements OnInit{
 
-  public searchResults: any;
+  public Results: any;
   public movieData: any;
   public movie: any;
   public type: any;
@@ -21,8 +22,18 @@ export class SearchResultsComponent {
   constructor(
     private apixuService: ApixuService,
     private router: Router,
+    private route: ActivatedRoute
   ) {}
 
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      const timestamp = params['timestamp'];
+      if (timestamp) {
+        this.getData();   
+      }
+    });
+  }
+  
   getData() {
     this.movie = this.apixuService.getTitle();
     this.type = this.apixuService.getType();

@@ -16,7 +16,6 @@ export class ApixuService {
     ) { }
 
   getSearch(movie: any, type: any) {
-    window.alert(movie);
     return this.http.get(
       'http://www.omdbapi.com/?apikey=1a098455&s=' + movie
     );
@@ -47,4 +46,5 @@ export class ApixuService {
   searchGet() {
     return this.search;
   }
+
 }

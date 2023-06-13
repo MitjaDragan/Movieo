@@ -38,9 +38,18 @@ export class SearchBarComponent {
     this.searchResults = [];
     this.cdr.detectChanges();
     this.apixuService.getMovie(search, 'movie');
-
-    const timestamp = new Date().getTime(); // Generate a timestamp
+    const timestamp = new Date().getTime();
     this.router.navigate(['/title'], { queryParams: { timestamp: timestamp } });
+  }
+
+  submitSearch() {
+    this.reference.nativeElement.value = '';
+    this.reference.nativeElement.blur();
+    this.searchResults = [];
+    this.cdr.detectChanges();
+    this.apixuService.getMovie(this.searchTerm, 'movie');
+    const timestamp = new Date().getTime();
+    this.router.navigate(['/result'], { queryParams: { timestamp: timestamp } });
   }
 
   searchMovies() {
@@ -51,5 +60,5 @@ export class SearchBarComponent {
       this.searchResults = [];
     }
   }
- 
+
 }
