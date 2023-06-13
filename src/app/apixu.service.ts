@@ -9,24 +9,33 @@ export class ApixuService {
 
   public movie: any;
   public type: any;
-  private buttonClickedSource = new Subject<void>();
-
-  buttonClicked$ = this.buttonClickedSource.asObservable();
+  public search: any;
 
   constructor(
     private http: HttpClient,
     ) { }
 
-  getMovie(movie: any, type: any) {
+  getSearch(movie: any, type: any) {
+    window.alert(movie);
     return this.http.get(
-      'http://www.omdbapi.com/?apikey=1a098455&t=' + movie + '&type=' + type
+      'http://www.omdbapi.com/?apikey=1a098455&s=' + movie
+    );
+  }
+
+  getMovie(search: any, type: any) {
+    this.movie = search;
+    return this.http.get(
+      'http://www.omdbapi.com/?apikey=1a098455&t=' + search
     );
   }
 
   setData(movie: any, type: any): void {
     this.movie = movie;
     this.type = type;
-    this.buttonClickedSource.next();
+  }
+
+  getData(search: any): void {
+    this.search = search;
   }
 
   getTitle() {
@@ -34,5 +43,8 @@ export class ApixuService {
   }
   getType() {
     return this.type;
+  }
+  searchGet() {
+    return this.search;
   }
 }

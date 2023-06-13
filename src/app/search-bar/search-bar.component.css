@@ -40,4 +40,40 @@ form {
         margin-left:10px;
       }
   }
-  
+
+.card {
+    position: absolute;
+    width:70%;
+    margin:auto;
+    z-index: 2;
+}
+
+.row {
+    height:100px;
+    z-index: 2;
+}
+
+.poster {
+    max-height: 100%;
+    width:70px;
+}
+
+.title, .year, .actors {
+    position:relative;
+    left:20px;
+    top:10px;
+}
+
+.titleDiv {
+    display:inline-block;
+}
+
+.container {
+    position: absolute;
+    justify-content: center;
+    margin-top:47px;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+}
+

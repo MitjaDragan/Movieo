@@ -1,0 +1,28 @@
+.searchList {
+    border:1px solid lightgray;
+}
+
+.poster {
+    max-height: 100%;
+    width:70px;
+}
+
+.title, .year, .actors {
+    position:relative;
+    left:20px;
+    top:10px;
+}
+
+.moreMovies {
+    height:60px;
+}
+
+.titleDiv {
+    display:inline-block;
+}
+
+.moreMatches {
+    position:relative;
+    top:20px;
+    left:20px;
+}

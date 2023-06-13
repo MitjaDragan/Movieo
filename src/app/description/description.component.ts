@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApixuService } from "../apixu.service";
 import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-description',
   templateUrl: './description.component.html',
   styleUrls: ['./description.component.css']
 })
-export class DescriptionComponent{
+export class DescriptionComponent implements OnInit{
 
   public movieData: any;
   public movie: any;
@@ -21,11 +22,16 @@ export class DescriptionComponent{
   private subscription: Subscription;
 
   constructor(
-    private apixuService: ApixuService
-  ) {
-    this.subscription = this.apixuService.buttonClicked$.subscribe(() => {
-      this.clickCount++;
-      this.getData();
+    private apixuService: ApixuService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      const timestamp = params['timestamp'];
+      if (timestamp) {
+        this.getData();   
+      }
     });
   }
 
@@ -34,6 +40,7 @@ export class DescriptionComponent{
     this.type = this.apixuService.getType();
     this.apixuService.getMovie(this.movie, this.type).subscribe(data => {
       this.movieData = data;
+      console.log(this.movieData);
     });
   }
 
@@ -44,6 +51,4 @@ export class DescriptionComponent{
     localStorage.setItem('favourites', JSON.stringify(favourites));
   }
 
-  
-  
 }

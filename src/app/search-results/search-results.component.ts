@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApixuService } from "../apixu.service";
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-results',
@@ -9,6 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class SearchResultsComponent {
 
+  public searchResults: any;
   public movieData: any;
   public movie: any;
   public type: any;
@@ -17,20 +19,22 @@ export class SearchResultsComponent {
   private subscription: Subscription;
 
   constructor(
-    private apixuService: ApixuService
-  ) {
-    this.subscription = this.apixuService.buttonClicked$.subscribe(() => {
-      this.clickCount++;
-      this.getData();
-    });
-  }
+    private apixuService: ApixuService,
+    private router: Router,
+  ) {}
 
   getData() {
     this.movie = this.apixuService.getTitle();
     this.type = this.apixuService.getType();
-
-    this.apixuService.getMovie(this.movie, this.type).subscribe(data => {
-      this.movieData = data;
+    this.apixuService.getSearch(this.movie, this.type).subscribe(data => {
+      this.movieData = Object.values(data);
+      console.log(this.movieData);
     });
   }
+
+  getMovie(title: any) {
+    this.apixuService.getMovie(title, "movie");
+    this.router.navigate(['/title']);
+  }
+
 }

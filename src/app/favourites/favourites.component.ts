@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApixuService } from '../apixu.service';
 import { Subscription } from 'rxjs';
 
@@ -8,8 +8,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./favourites.component.css']
 })
 
-
-export class FavouritesComponent{
+export class FavouritesComponent implements OnInit{
   
   favouriteMovies: any[] = [];
   clickCount = 0;
@@ -17,14 +16,9 @@ export class FavouritesComponent{
 
   constructor(
     private apixuService: ApixuService
-  ) {
-    this.subscription = this.apixuService.buttonClicked$.subscribe(() => {
-      this.clickCount++;
-      this.getFavouritesFromLocalStorage();
-    });
-  }
+  ) {}
 
-  getFavouritesFromLocalStorage() {
+  ngOnInit() {
     this.favouriteMovies = JSON.parse(localStorage.getItem('favourites') || '[]');
   }
 

@@ -6,7 +6,6 @@
         <form
             class="d-flex"
             [formGroup]="movieSearchForm"
-            (ngSubmit)="setData(movieSearchForm.value)"
             >
             <select
                 class="form-control select-category mt-2"
@@ -26,8 +25,26 @@
                 aria-describedby="movie"
                 placeholder="Search"
                 formControlName="movie"
+                searchInput [(ngModel)]="searchTerm" (keyup)="searchMovies()"
+                autocomplete="off"
+                #reference
             />
-            <button type="submit" class="btn btn-outline-light my-2 my-sm-2" routerLink="/title">
+            <div class="container p-2">
+                <div *ngIf="searchResults.length > 0" class="card bg-dark text-white p-1">
+                    <div *ngFor="let movie of searchResults[0].slice(0, 3)" class="row mb-2 ml-1">
+                        <img class="poster" src="{{ movie.Poster }}" alt="{{ movie.Title }}" />
+                        <div class="titleDiv">
+                            <button type="button" (click)="getData(movie['Title'])" class="btn btn-outline-light my-2 my-sm-2 title">
+                                <span><b>{{ movie.Title }}</b></span>
+                            </button><br/>
+                            <span class="year">{{ movie.Year }}</span><br/>
+                            <span class="actors">{{ movie.Director }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+            <button (click)="searchResults = []" type="submit" class="btn btn-outline-light my-2 my-sm-2" routerLink="/result">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             </button>
 
@@ -37,3 +54,5 @@
         </form>
     </div>
 </nav>
+
+

@@ -1,1 +1,33 @@
-<p>search-results works!</p>
+<div class="container mt-1 p-0">
+    <div class="card p-0">
+        <div class="col-8 p-2">
+            <h1>Search &quot;{{ movie }}&quot;</h1>
+            <br/>
+            <h2><b>Titles</b><button class="btn btn-dark float-right">Exact matches</button></h2>
+            <div class="searchList p-3 m-1">
+                <div *ngFor="let movie of movieData[0].slice(0, 5)" class="movie mb-2" style="height:80px"> 
+                    <img class="poster" [src]="movie['Poster']" [alt]="movie['Title']"/>
+                    <div class="titleDiv">
+                        <button (click)="getMovie('title')"><span class="title"><b>{{ movie.Title }}</b></span><br/></button>
+                        <span class="year">{{ movie.Year }}</span><br/>
+                        <span class="actors">{{ movie.Director }}</span>
+
+                    </div><hr style="margin-top:4px"/>
+                </div>
+                <div class="movie moreMovies">
+                    <a class="moreMatches" href="#">More popular matches</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+
+        </div>
+    </div>
+</div>
+
+<!-- movie poster, title, release year
+
+<img class="poster" [src]="movie['Poster']" [alt]="movie['Title']"/>
+-->
+
+
